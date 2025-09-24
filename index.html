@@ -2,152 +2,67 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>XSMB - Kết quả xổ số miền Bắc</title>
+  <title>Lottery Demo - Bangkok Time</title>
   <style>
-    body {
-      background: #f2f2f2;
-      font-family: Arial, sans-serif;
-    }
-    .lottery-header {
-      background: red;
-      color: #fff;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    .table-container {
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    .lottery-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      font-size: 18px;
-      text-align: center;
-      min-width: 700px;
-    }
-
-    .lottery-table th {
-      width: 60px;
-      background: #f5f5f5;
-      border: 1px solid #ddd;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    .lottery-table td {
-      border: 1px solid #ddd;
-      padding: 6px;
-      min-width: 60px;
-      white-space: nowrap;
-    }
-    .final {
-      font-weight: bold;
-    }
-    .red {
-      color: red;
-    }
-
-    /* spinner */
-    .spinner {
-      display: inline-block;
-      position: relative;
-      width: 24px;
-      height: 24px;
-    }
-    .spinner div {
-      transform-origin: 12px 12px;
-      animation: spinner 1.2s linear infinite;
-    }
-    .spinner div:after {
-      content: " ";
+    body { font-family: sans-serif; text-align: center; margin: 20px; }
+    table { border-collapse: collapse; margin: 20px auto; font-size: 24px; }
+    td { border: 1px solid #444; padding: 10px 20px; text-align: center; }
+    .spinner::after {
+      content: "⏳ กำลังหมุน...";
       display: block;
-      position: absolute;
-      top: 2px;
-      left: 11px;
-      width: 2px;
-      height: 6px;
-      border-radius: 20%;
-      background: orange;
+      font-size: 14px;
+      color: red;
+      margin-top: 5px;
     }
-    .spinner div:nth-child(1) { transform: rotate(0deg); animation-delay: -1.1s; }
-    .spinner div:nth-child(2) { transform: rotate(45deg); animation-delay: -1s; }
-    .spinner div:nth-child(3) { transform: rotate(90deg); animation-delay: -0.9s; }
-    .spinner div:nth-child(4) { transform: rotate(135deg); animation-delay: -0.8s; }
-    .spinner div:nth-child(5) { transform: rotate(180deg); animation-delay: -0.7s; }
-    .spinner div:nth-child(6) { transform: rotate(225deg); animation-delay: -0.6s; }
-    .spinner div:nth-child(7) { transform: rotate(270deg); animation-delay: -0.5s; }
-    .spinner div:nth-child(8) { transform: rotate(315deg); animation-delay: -0.4s; }
-    @keyframes spinner {
-      0% { opacity: 1; }
-      100% { opacity: 0; }
-    }
+    .final { font-weight: bold; color: green; }
   </style>
 </head>
 <body>
-  <div class="lottery-header">XSMB - Kết quả xổ số miền Bắc</div>
+  <h2>🎰 Lottery Demo (Bangkok Time)</h2>
+  <p>โค้ดนี้อิงเวลา <b>ประเทศไทย (Asia/Bangkok)</b></p>
 
-  <div class="table-container">
-    <table class="lottery-table">
-      <!-- G.ĐB -->
-      <tr>
-        <th>G.ĐB</th>
-        <td colspan="12" class="spin final red"
-            data-start="20:08:00" data-stop="20:09:00"
-            data-duration="10" data-final="123406" data-length="6"></td>
-      </tr>
-
-      <!-- G.1 -->
-      <tr>
-        <th>G.1</th>
-        <td colspan="12" class="spin final"
-            data-start="18:31:00" data-stop="18:32:00"
-            data-duration="10" data-final="65432" data-length="5"></td>
-      </tr>
-
-      <!-- G.2 -->
-      <tr>
-        <th>G.2</th>
-        <td colspan="6" class="spin final"
-            data-start="18:32:00" data-stop="18:33:00"
-            data-duration="10" data-final="11111" data-length="5"></td>
-        <td colspan="6" class="spin final"
-            data-start="18:33:00" data-stop="18:34:00"
-            data-duration="10" data-final="22222" data-length="5"></td>
-      </tr>
-    </table>
-  </div>
+  <table>
+    <tr>
+      <!-- ตั้งเวลาเป็น 1-2 นาทีล่วงหน้าเพื่อทดสอบ -->
+      <td class="spin final"
+          data-start="20:22:00"
+          data-stop="20:23:00"
+          data-duration="10"
+          data-final="123456"
+          data-length="6"></td>
+    </tr>
+  </table>
 
   <script>
-    function showSpinner(cell) {
-      cell.innerHTML = `
-        <div class="spinner">
-          <div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div>
-        </div>`;
+    // คืนค่าเวลาปัจจุบันตามโซน Bangkok
+    function nowInBangkok() {
+      let now = new Date();
+      let str = now.toLocaleString("en-US", { timeZone: "Asia/Bangkok" });
+      return new Date(str);
+    }
+
+    // parse "HH:MM:SS" เป็น Date ของวันนี้ (Bangkok timezone)
+    function parseTimeBangkok(t) {
+      let [h, m, s] = t.split(":").map(Number);
+      let now = nowInBangkok();
+      let d = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m, s);
+      if (d < now) {
+        d.setDate(d.getDate() + 1); // ถ้าเวลาผ่านไปแล้ว → ขยับเป็นวันถัดไป
+      }
+      return d;
     }
 
     function randomNumber(length) {
-      let n = "";
+      let s = "";
       for (let i = 0; i < length; i++) {
-        n += Math.floor(Math.random() * 10);
+        s += Math.floor(Math.random() * 10);
       }
-      return n;
+      return s;
     }
 
-    // ✅ parseTime ถ้าเวลาเล็กกว่าปัจจุบัน → ขยับไปวันถัดไป
-    function parseTime(t) {
-      let [h, m, s] = t.split(":").map(Number);
-      let d = new Date();
-      d.setHours(h, m, s, 0);
-      if (d < new Date()) {
-        d.setDate(d.getDate() + 1);
-      }
-      return d;
+    function showSpinner(cell) {
+      cell.classList.add("spinner");
+      cell.textContent = "";
     }
 
     function scheduleSpin(cell) {
@@ -157,10 +72,16 @@
       let finalNum = cell.dataset.final;
       let length = parseInt(cell.dataset.length || (finalNum ? finalNum.length : 2));
 
-      let startDate = parseTime(startTime);
-      let stopDate = parseTime(stopTime);
+      let startDate = parseTimeBangkok(startTime);
+      let stopDate = parseTimeBangkok(stopTime);
+      let now = nowInBangkok();
+
+      console.log("⏰ Now:", now.toLocaleTimeString(),
+                  "Start:", startDate.toLocaleTimeString(),
+                  "Stop:", stopDate.toLocaleTimeString());
 
       function startRandom() {
+        cell.classList.remove("spinner");
         cell.innerHTML = "";
         let endTime = Date.now() + duration * 1000;
         let timer = setInterval(() => {
@@ -174,28 +95,25 @@
             } else {
               cell.dataset.final = cell.textContent;
             }
+            cell.classList.add("final");
           }
         }, 100);
       }
 
-      let now = new Date();
-
-      // ก่อนเวลา → โชว์ final ไปก่อน
       if (now < startDate) {
         cell.textContent = finalNum || "";
         setTimeout(() => {
           showSpinner(cell);
-          setTimeout(startRandom, stopDate - startDate);
+          setTimeout(startRandom, duration * 1000);
         }, startDate - now);
 
-      // ระหว่างเวลา → spinner + หมุน
       } else if (now >= startDate && now < stopDate) {
         showSpinner(cell);
-        setTimeout(startRandom, stopDate - now);
+        setTimeout(startRandom, duration * 1000);
 
-      // เลยเวลา → โชว์ final 24 ชม.
-      } else if (now >= stopDate) {
+      } else {
         cell.textContent = finalNum || "";
+        cell.classList.add("final");
       }
     }
 
@@ -203,4 +121,3 @@
   </script>
 </body>
 </html>
-
