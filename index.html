@@ -18,10 +18,9 @@
       margin-bottom: 10px;
     }
 
-    /* ✅ ครอบตาราง */
     .table-container {
       width: 100%;
-      overflow-x: auto;  /* มือถือ → เลื่อนซ้าย-ขวาได้ */
+      overflow-x: auto;
     }
 
     .lottery-table {
@@ -30,7 +29,7 @@
       background: #fff;
       font-size: 18px;
       text-align: center;
-      min-width: 700px;  /* กันบีบเกินไป */
+      min-width: 700px;
     }
 
     .lottery-table th {
@@ -44,7 +43,7 @@
       border: 1px solid #ddd;
       padding: 6px;
       min-width: 60px;
-      white-space: nowrap; /* ป้องกันตัดบรรทัด */
+      white-space: nowrap;
     }
     .final {
       font-weight: bold;
@@ -92,86 +91,34 @@
 <body>
   <div class="lottery-header">XSMB - Kết quả xổ số miền Bắc</div>
 
-  <!-- ✅ ครอบตารางด้วย div -->
   <div class="table-container">
     <table class="lottery-table">
       <!-- G.ĐB -->
       <tr>
         <th>G.ĐB</th>
-        <td colspan="12" class="spin final red" data-start="19:28:00" data-stop="02:29:00" data-duration="300" data-final="123406" data-length="6"></td>
+        <td colspan="12" class="spin final red"
+            data-start="20:5:00" data-stop="20:06:00"
+            data-duration="10" data-final="123406" data-length="6"></td>
       </tr>
 
       <!-- G.1 -->
       <tr>
         <th>G.1</th>
-        <td colspan="12" class="spin final" data-start="18:30:00" data-stop="18:32:00" data-duration="120" data-final="65432" data-length="5"></td>
+        <td colspan="12" class="spin final"
+            data-start="18:31:00" data-stop="18:32:00"
+            data-duration="10" data-final="65432" data-length="5"></td>
       </tr>
 
       <!-- G.2 -->
       <tr>
         <th>G.2</th>
-        <td colspan="6" class="spin final" data-start="02:11:00" data-stop="02:13:00" data-duration="20" data-length="5"></td>
-        <td colspan="6" class="spin final" data-start="02:15:00" data-stop="02:16:00" data-duration="20" data-length="5"></td>
+        <td colspan="6" class="spin final"
+            data-start="18:32:00" data-stop="18:33:00"
+            data-duration="10" data-final="11111" data-length="5"></td>
+        <td colspan="6" class="spin final"
+            data-start="18:33:00" data-stop="18:34:00"
+            data-duration="10" data-final="22222" data-length="5"></td>
       </tr>
-
-      <!-- G.3 -->
-      <tr>
-        <th rowspan="2">G.3</th>
-        <td colspan="4" class="spin final" data-start="18:32:00" data-stop="18:33:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:32:00" data-stop="18:33:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:32:00" data-stop="18:33:00" data-duration="20" data-length="5"></td>
-      </tr>
-      <tr>
-        <td colspan="4" class="spin final" data-start="18:32:00" data-stop="18:33:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:32:00" data-stop="18:33:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:32:00" data-stop="18:33:00" data-duration="20" data-length="5"></td>
-      </tr>
-
-      <!-- G.4 -->
-      <tr>
-        <th rowspan="2">G.4</th>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="4"></td>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="4"></td>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="4"></td>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="4"></td>
-      </tr>
-      <tr>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="5"></td>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="5"></td>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="5"></td>
-        <td colspan="3" class="spin final" data-start="18:33:00" data-stop="18:34:00" data-duration="20" data-length="5"></td>
-      </tr>
-
-      <!-- G.5 -->
-      <tr>
-        <th rowspan="2">G.5</th>
-        <td colspan="4" class="spin final" data-start="18:34:00" data-stop="18:35:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:34:00" data-stop="18:35:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:34:00" data-stop="18:35:00" data-duration="20" data-length="5"></td>
-      </tr>
-      <tr>
-        <td colspan="4" class="spin final" data-start="18:34:00" data-stop="18:35:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:34:00" data-stop="18:35:00" data-duration="20" data-length="5"></td>
-        <td colspan="4" class="spin final" data-start="18:34:00" data-stop="18:35:00" data-duration="20" data-length="5"></td>
-      </tr>
-
-      <!-- G.6 -->
-      <tr>
-        <th>G.6</th>
-        <td colspan="4" class="spin final" data-start="18:35:00" data-stop="18:36:00" data-duration="20" data-length="3"></td>
-        <td colspan="4" class="spin final" data-start="18:35:00" data-stop="18:36:00" data-duration="20" data-length="3"></td>
-        <td colspan="4" class="spin final" data-start="18:35:00" data-stop="18:36:00" data-duration="20" data-length="3"></td>
-      </tr>
-
-      <!-- G.7 -->
-          <tr>
-        <th>G.7</th>
-        <td colspan="3" class="spin final red" data-start="18:36:00" data-stop="18:37:00" data-duration="20" data-length="2"></td>
-        <td colspan="3" class="spin final red" data-start="18:36:00" data-stop="18:37:00" data-duration="20" data-length="2"></td>
-        <td colspan="3" class="spin final red" data-start="18:36:00" data-stop="18:37:00" data-duration="20" data-length="2"></td>
-        <td colspan="3" class="spin final red" data-start="18:36:00" data-stop="18:37:00" data-duration="20" data-length="2"></td>
-      </tr>
-
     </table>
   </div>
 
@@ -192,7 +139,7 @@
       return n;
     }
 
-    // ✅ parseTime ใหม่ → ถ้าเวลาเล็กกว่าปัจจุบัน ขยับไปวันถัดไป
+    // ✅ parseTime ถ้าเวลาเล็กกว่าปัจจุบัน → ขยับไปวันถัดไป
     function parseTime(t) {
       let [h, m, s] = t.split(":").map(Number);
       let d = new Date();
@@ -233,23 +180,22 @@
 
       let now = new Date();
 
+      // ก่อนเวลา → โชว์ final ไปก่อน
       if (now < startDate) {
         cell.textContent = finalNum || "";
         setTimeout(() => {
           showSpinner(cell);
           setTimeout(startRandom, stopDate - startDate);
         }, startDate - now);
+
+      // ระหว่างเวลา → spinner + หมุน
       } else if (now >= startDate && now < stopDate) {
         showSpinner(cell);
         setTimeout(startRandom, stopDate - now);
+
+      // เลยเวลา → โชว์ final 24 ชม.
       } else if (now >= stopDate) {
-        if (finalNum) {
-          cell.textContent = finalNum;
-        } else {
-          let rand = randomNumber(length);
-          cell.textContent = rand;
-          cell.dataset.final = rand;
-        }
+        cell.textContent = finalNum || "";
       }
     }
 
