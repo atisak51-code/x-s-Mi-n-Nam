@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>XSMB - Kết quả  xổ số Miền Nam </title>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    .lottery-header {
+      background: red;
+      color: #fff;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* ✅ ครอบตาราง */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;  /* มือถือ → เลื่อนซ้าย-ขวาได้ */
+    }
+
+    .lottery-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-size: 18px;
+      text-align: center;
+      min-width: 700px;  /* กันบีบเกินไป */
+    }
+
+    .lottery-table th {
+      width: 60px;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .lottery-table td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      min-width: 60px;
+      white-space: nowrap; /* ป้องกันตัดบรรทัด */
+    }
+    .final {
+      font-weight: bold;
+    }
+    .red {
+      color: red;
+    }
+
+    /* spinner */
+    .spinner {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+    }
+    .spinner div {
+      transform-origin: 12px 12px;
+      animation: spinner 1.2s linear infinite;
+    }
+    .spinner div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 11px;
+      width: 2px;
+      height: 6px;
+      border-radius: 20%;
+      background: orange;
+    }
+    .spinner div:nth-child(1) { transform: rotate(0deg); animation-delay: -1.1s; }
+    .spinner div:nth-child(2) { transform: rotate(45deg); animation-delay: -1s; }
+    .spinner div:nth-child(3) { transform: rotate(90deg); animation-delay: -0.9s; }
+    .spinner div:nth-child(4) { transform: rotate(135deg); animation-delay: -0.8s; }
+    .spinner div:nth-child(5) { transform: rotate(180deg); animation-delay: -0.7s; }
+    .spinner div:nth-child(6) { transform: rotate(225deg); animation-delay: -0.6s; }
+    .spinner div:nth-child(7) { transform: rotate(270deg); animation-delay: -0.5s; }
+    .spinner div:nth-child(8) { transform: rotate(315deg); animation-delay: -0.4s; }
+    @keyframes spinner {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- ✅ หัวข้อแก้ไขได้ -->
+  <div class="lottery-header" contenteditable="true">
+    Kết quả  xổ số Miền Nam
+  </div>
+
+  <!-- ✅ ครอบตารางด้วย div -->
+  <div class="table-container">
+    <table class="lottery-table">
+      <!-- G.ĐB -->
+      <tr>
+        <th>G.ĐB</th>
+        <td colspan="12" class="spin final red" data-start="16:00:00" data-stop="16:24:45" data-duration="315" data-final="12346" data-length="5"></td>
+      </tr>
+
+      <!-- G.1 -->
+      <tr>
+        <th>G.1</th>
+        <td colspan="12" class="spin final" data-start="16:00:00" data-stop="16:12:00" data-duration="180" data-final="65432" data-length="5"></td>
+      </tr>
+
+      <!-- G.2 -->
+      <tr>
+        <th>G.2</th>
+        <td colspan="6" class="spin final" data-start="16:00:00" data-stop="16:15:00" data-duration="20" data-length="5"></td>
+        <td colspan="6" class="spin final" data-start="16:00:00" data-stop="16:15:20" data-duration="20" data-length="5"></td>
+      </tr>
+
+      <!-- G.3 -->
+      <tr>
+        <th rowspan="2">G.3</th>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:15:40" data-duration="20" data-length="5"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:16:00" data-duration="20" data-length="5"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:16:20" data-duration="20" data-length="5"></td>
+      </tr>
+      <tr>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:16:40" data-duration="20" data-length="5"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:17:00" data-duration="20" data-length="5"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:17:20" data-duration="20" data-length="5"></td>
+      </tr>
+
+      <!-- G.4 -->
+      <tr>
+        <th rowspan="2">G.4</th>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:17:40" data-duration="20" data-length="4"></td>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:18:00" data-duration="20" data-length="4"></td>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:18:20" data-duration="20" data-length="4"></td>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:18:40" data-duration="20" data-length="4"></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:19:00" data-duration="20" data-length="4"></td>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:19:20" data-duration="20" data-length="4"></td>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:19:40" data-duration="20" data-length="4"></td>
+        <td colspan="3" class="spin final" data-start="16:00:00" data-stop="16:20:00" data-duration="20" data-length="4"></td>
+      </tr>
+
+      <!-- G.5 -->
+      <tr>
+        <th rowspan="2">G.5</th>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:20:20" data-duration="20" data-length="4"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:20:40" data-duration="20" data-length="4"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:21:00" data-duration="20" data-length="4"></td>
+      </tr>
+      <tr>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:21:20" data-duration="20" data-length="5"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:21:40" data-duration="20" data-length="5"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:22:00" data-duration="20" data-length="5"></td>
+      </tr>
+
+      <!-- G.6 -->
+      <tr>
+        <th>G.6</th>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:22:20" data-duration="20" data-length="3"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:22:40" data-duration="20" data-length="3"></td>
+        <td colspan="4" class="spin final" data-start="16:00:00" data-stop="16:23:00" data-duration="20" data-length="3"></td>
+      </tr>
+
+      <!-- G.7 -->
+      <tr>
+        <th>G.7</th>
+        <td colspan="3" class="spin final red" data-start="16:00:00" data-stop="16:23:20" data-duration="20" data-length="2"></td>
+        <td colspan="3" class="spin final red" data-start="16:00:00" data-stop="16:23:40" data-duration="20" data-length="2"></td>
+        <td colspan="3" class="spin final red" data-start="16:00:00" data-stop="16:24:00" data-duration="20" data-length="2"></td>
+        <td colspan="3" class="spin final red" data-start="16:00:00" data-stop="16:24:20" data-duration="20" data-length="2"></td>
+      </tr>
+
+    </table>
+  </div>
+
+  <script>
+    function showSpinner(cell) {
+      cell.innerHTML = `
+        <div class="spinner">
+          <div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div>
+        </div>`;
+    }
+
+    function randomNumber(length) {
+      let n = "";
+      for (let i = 0; i < length; i++) {
+        n += Math.floor(Math.random() * 10);
+      }
+      return n;
+    }
+
+    // ✅ parseTime ใหม่ → ถ้าเวลาเล็กกว่าปัจจุบัน ขยับไปวันถัดไป
+    function parseTime(t) {
+      let [h, m, s] = t.split(":").map(Number);
+      let d = new Date();
+      d.setHours(h, m, s, 0);
+      if (d < new Date()) {
+        d.setDate(d.getDate() + 1);
+      }
+      return d;
+    }
+
+    function scheduleSpin(cell) {
+      let startTime = cell.dataset.start;
+      let stopTime = cell.dataset.stop;
+      let duration = parseInt(cell.dataset.duration || 20);
+      let finalNum = cell.dataset.final;
+      let length = parseInt(cell.dataset.length || (finalNum ? finalNum.length : 2));
+
+      let startDate = parseTime(startTime);
+      let stopDate = parseTime(stopTime);
+
+      function startRandom() {
+        cell.innerHTML = "";
+        let endTime = Date.now() + duration * 1000;
+        let timer = setInterval(() => {
+          let rand = randomNumber(length);
+          cell.textContent = rand;
+
+          if (Date.now() >= endTime) {
+            clearInterval(timer);
+            if (finalNum) {
+              cell.textContent = finalNum;
+            } else {
+              cell.dataset.final = cell.textContent;
+            }
+          }
+        }, 100);
+      }
+
+      let now = new Date();
+
+      if (now < startDate) {
+        cell.textContent = finalNum || "";
+        setTimeout(() => {
+          showSpinner(cell);
+          setTimeout(startRandom, stopDate - startDate);
+        }, startDate - now);
+      } else if (now >= startDate && now < stopDate) {
+        showSpinner(cell);
+        setTimeout(startRandom, stopDate - now);
+      } else if (now >= stopDate) {
+        if (finalNum) {
+          cell.textContent = finalNum;
+        } else {
+          let rand = randomNumber(length);
+          cell.textContent = rand;
+          cell.dataset.final = rand;
+        }
+      }
+    }
+
+    document.querySelectorAll(".spin").forEach(scheduleSpin);
+  </script>
+</body>
+</html>>
